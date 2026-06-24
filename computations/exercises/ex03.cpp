@@ -37,5 +37,6 @@ int main()
 		std::cout << "smallest distance: " << min << "\n";
 		std::cout << "largest distance: " << max << "\n";
 		std::cout << "sum of all data points: " << sum << "\n";
+		std::cout << "mean of all data points: " << sum/v.size() << "\n";
 
 }
