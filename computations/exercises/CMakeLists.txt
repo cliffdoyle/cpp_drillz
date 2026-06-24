@@ -8,3 +8,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(ex01 ex01.cpp)
 
 add_executable(exo2 ex02.cpp)
+
+add_executable(exo3 ex03.cpp)
