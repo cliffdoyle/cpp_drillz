@@ -10,3 +10,5 @@ add_executable(ex01 ex01.cpp)
 add_executable(exo2 ex02.cpp)
 
 add_executable(exo3 ex03.cpp)
+
+add_executable(ex04 ex04.cpp)
