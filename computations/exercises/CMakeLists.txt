@@ -16,3 +16,5 @@ add_executable(ex04 ex04.cpp)
 add_executable(exo5 ex05.cpp)
 
 add_executable(exo6 ex06.cpp)
+
+add_executable(exo7 ex07.cpp)
