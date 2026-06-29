@@ -1,66 +1,60 @@
-#include <iostream>
+//Program that implements the sieve of erotesthenes
+# include <iostream>
 
-#include <cmath>
+# include <vector>
 
-#include <vector>
+# include <cmath>
 
-bool is_prime(int n)
+std::vector<int> sieve_of_erotesthenes(int n)
 {
-    if (n == 1 || n == 0)
-    {
-        return false;
-    }
+	std::vector<bool> is_prime(n + 1, true);
 
-    for (int i = 2; i <= std::sqrt(n); i++)
-    {
-        if (n % i == 0)
-        {
-            return false;
-        }
-    }
-    return true;
+	is_prime[0] = false;
+	is_prime[1] = false;
+
+	for (bool b : is_prime)
+	{
+		std::cout << "A peak inside the masking vector: " << b << "\n";
+	}
+
+	for (int i = 2;i <= std::sqrt(n);i++)
+	{
+		if (is_prime[i])
+		{
+			for (int j = i*i;j <= n;j += i)
+			{
+				is_prime[j] = false;
+
+			}
+		}
+
+	}
+
+	//Collect the prime numbers now
+	std::vector<int > primes;
+
+	for (int i = 2;i <= n;i++)
+	{
+		if (is_prime[i])
+		{
+			primes.push_back(i);
+		}
+
+	}
+
+	return primes;
+
+
 }
-
-std::vector<int> sieve_of_eratosthenes(int n)
-{
-    std::vector<int> res={};
-    std::vector<int> res2={};
-
-    for(int i=2;i<=n;i++)
-    {
-        // if (is_prime(i))
-        // {
-
-        // }
-        res2.push_back(i);
-
-    }
-
-    for(int i=2;i<=n;i++)
-    {
-
-    }
-    
-    for (int j=0;j<res2.size();j++)
-    {
-        int i=0;
-        if(is_prime(res2[j]))
-        {
-            while(i < res2.size())
-            {
-                if(res2[j] % i==0)
-                {
-
-                }
-            }
-        }
-        
-    }
-}
-
 
 int main()
 {
+	int n = 60;
+	std::vector<int> res = sieve_of_erotesthenes(n);
 
-    return 0;
+	for (int v : res)
+	{
+		std::cout << "prime no.s found: " << v << "\n";
+	}
+
 }
