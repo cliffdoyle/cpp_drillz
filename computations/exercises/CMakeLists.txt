@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.23)
 project(COMPUTATIONS LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
+
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(ex01 ex01.cpp)
@@ -20,3 +21,7 @@ add_executable(exo6 ex06.cpp)
 add_executable(exo7 ex07.cpp)
 
 add_executable(exo8 ex08.cpp)
+
+add_executable(exo9 ex09.cpp)
+
+add_executable(enums enums.cpp)
