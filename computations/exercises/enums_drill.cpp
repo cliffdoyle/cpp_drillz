@@ -49,7 +49,7 @@ void Name_pairs::print(std::vector<std::string> &n)
 	{
 		// for (int j = 0; j < age.size(); j++)
 		// {
-			std::cout << n[i] << age[i] << "\n";
+		std::cout << n[i] << age[i] << "\n";
 		// }
 	}
 }
@@ -60,4 +60,5 @@ int main()
 	Name_pairs namey;
 	namey.read_ages(names);
 	namey.print(names);
+	namey.read_names(names);
 }
