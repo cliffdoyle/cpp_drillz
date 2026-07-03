@@ -31,7 +31,7 @@ void Name_pairs::read_ages(std::vector<std::string> &n)
 	int ag{};
 	for (int i = 0; i < n.size(); i++)
 	{
-		std::cout << "Name: " << n[i] << "Kindly put your age: " << "\n";
+		std::cout << "Name: " << n[i] << " Kindly put your age: " << "\n";
 		std::cin >> ag;
 		Name_pairs::age.push_back(ag);
 	}
