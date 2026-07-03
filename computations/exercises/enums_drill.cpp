@@ -2,21 +2,22 @@
 # include <string>
 # include <iostream>
 # include <vector>
-# include <limit>
+# include <limits>
+# include <algorithm>
 
 class Name_pairs {
 public:
-	void read_names(vector<std::string>);
-	void read_ages();
-	void print();
-	//void sort();
+	void read_names(std::vector<std::string>&);
+	void read_ages(std::vector<std::string>&);
+	void print(std::vector<std::string>&,std::vector<double>&);
+	void sort(std::vector<std::string>&);
 private:
-	vector<std::string> name;
-	vector<double> age;
+	std::vector<std::string> name;
+	std::vector<double> age;
 
 };
 
-Name_pairs::read_names(vector<std::string>& n)
+void Name_pairs::read_names(std::vector<std::string>& n)
 {
 	for (std::string s : n)
 	{
@@ -25,7 +26,7 @@ Name_pairs::read_names(vector<std::string>& n)
 
 }
 
-Name_pairs::read_ages(vector<std::string>& n)
+void Name_pairs::read_ages(std::vector<std::string>& n)
 {	
 	int ag{};
 	for (int i = 0;i < n.size();i++)
@@ -38,9 +39,15 @@ Name_pairs::read_ages(vector<std::string>& n)
 
 }
 
-Name_pairs::print(vector<std::string>& n)
+void Name_pairs::sort(std::vector<std::string>& v)
 {
-	std::numeric_limits(n);
+	std::sort(v.begin(),v.end());
+
+}
+
+void Name_pairs::print(std::vector<std::string>& n,std::vector<double>& a)
+{
+	// std::numeric_limits(n);
 
 
 
