@@ -22,6 +22,8 @@ add_executable(exo7 ex07.cpp)
 
 add_executable(exo8 ex08.cpp)
 
-add_executable(exo9 ex09.cpp)
+# add_executable(exo9 ex09.cpp)
 
 add_executable(enums enums.cpp)
+
+add_executable(enum enums_drill.cpp)
