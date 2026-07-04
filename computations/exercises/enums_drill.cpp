@@ -4,61 +4,104 @@
 #include <vector>
 #include <limits>
 #include <algorithm>
+#include <map>
 
 class Name_pairs
 {
 public:
-	void read_names(std::vector<std::string> &);
-	void read_ages(std::vector<std::string> &);
-	void print(std::vector<std::string> &);
-	void sort(std::vector<std::string> &);
+	void read_names();
+	void read_ages();
+	void print();
+	void sort();
 
 private:
 	std::vector<std::string> name;
 	std::vector<double> age;
+	std::map<std::string, int> data;
 };
 
-void Name_pairs::read_names(std::vector<std::string> &n)
+void Name_pairs::read_names()
 {
-	for (std::string s : n)
+	// for (std::string s : n)
+	// {
+	// 	std::cout << "names in the name_vectors: " << s << "\n";
+	// }
+	
+	std::cout << "Kindly enter names: " << "\n";
+	for(std::string s;std::cin>>s;)
 	{
-		std::cout << "names in the name_vectors: " << s << "\n";
+		if (s=="0")
+		break;
+		name.push_back(s);
 	}
+	
 }
 
-void Name_pairs::read_ages(std::vector<std::string> &n)
+void Name_pairs::read_ages()
 {
-	int ag{};
-	for (int i = 0; i < n.size(); i++)
+	double ag{};
+	for (int i = 0; i < name.size(); i++)
 	{
-		std::cout << "Name: " << n[i] << " Kindly put your age: " << "\n";
+		std::cout << "Name: " << name[i] << " Kindly put your age: " << "\n";
 		std::cin >> ag;
 		Name_pairs::age.push_back(ag);
 	}
+
+	for (int i = 0; i < name.size(); i++)
+	{
+		// for(int j=0;j<age.size();j++)
+		// {
+		data[name[i]] = age[i];
+		// }
+	}
+
+	for (auto &[name, ages] : data)
+	{
+		std::cout << "data in the map: " << name << " " << ages << "\n";
+	}
 }
 
-void Name_pairs::sort(std::vector<std::string> &v)
+void Name_pairs::sort()
 {
-	std::sort(v.begin(), v.end());
+	std::sort(name.begin(), name.end());
+	int i = 0;
+	for (auto &[name, ages] : data)
+	{
+		// std::cout << "data in the map: " << name << " " << ages << "\n";
+		// for(int i=0;i<age.size();i++)
+		// {
+		age[i] = ages;
+		i++;
+
+		// }
+		// age.push_back(ages);
+	}
 }
 
-void Name_pairs::print(std::vector<std::string> &n)
+void Name_pairs::print()
 {
 	// std::numeric_limits(n);
-	for (int i = 0; i < n.size(); i++)
+	for (int i = 0; i < name.size(); i++)
 	{
 		// for (int j = 0; j < age.size(); j++)
 		// {
-		std::cout << n[i] << age[i] << "\n";
+		std::cout << name[i] << age[i] << "\n";
 		// }
+	}
+
+	for (int i : age)
+	{
+		std::cout << "data in the age vector: " << i << "\n";
 	}
 }
 
 int main()
 {
-	std::vector<std::string> names{"caro", "jayne", "milka", "roy"};
+	// std::vector<std::string> names{"jayne", "milka", "roy", "caro", "alphy"};
+
 	Name_pairs namey;
-	namey.read_ages(names);
-	namey.print(names);
-	namey.read_names(names);
+	namey.read_names();
+	namey.read_ages();
+	namey.sort();
+	namey.print();
 }
