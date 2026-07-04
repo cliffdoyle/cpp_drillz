@@ -26,15 +26,14 @@ void Name_pairs::read_names()
 	// {
 	// 	std::cout << "names in the name_vectors: " << s << "\n";
 	// }
-	
+
 	std::cout << "Kindly enter names: " << "\n";
-	for(std::string s;std::cin>>s;)
+	for (std::string s; std::cin >> s;)
 	{
-		if (s=="0")
-		break;
+		if (s == "0")
+			break;
 		name.push_back(s);
 	}
-	
 }
 
 void Name_pairs::read_ages()
@@ -63,18 +62,29 @@ void Name_pairs::read_ages()
 
 void Name_pairs::sort()
 {
-	std::sort(name.begin(), name.end());
-	int i = 0;
-	for (auto &[name, ages] : data)
-	{
-		// std::cout << "data in the map: " << name << " " << ages << "\n";
-		// for(int i=0;i<age.size();i++)
-		// {
-		age[i] = ages;
-		i++;
+	// std::sort(name.begin(), name.end());
+	// int i = 0;
+	// for (auto &[name, ages] : data)
+	// {
+	// 	// std::cout << "data in the map: " << name << " " << ages << "\n";
+	// 	// for(int i=0;i<age.size();i++)
+	// 	// {
+	// 	age[i] = ages;
+	// 	i++;
 
-		// }
-		// age.push_back(ages);
+	// 	// }
+	// 	// age.push_back(ages);
+	// }
+	for (size_t i = 0; i < name.size(); i++)
+	{
+		for (size_t j = i + 1; j < name.size(); j++)
+		{
+			if (name[j] < name[i])
+			{ // name[i], name[j] = name[j], name[i];
+				std::swap(name[j], name[i]);
+				std::swap(age[j], age[i]);
+			}
+		}
 	}
 }
 
