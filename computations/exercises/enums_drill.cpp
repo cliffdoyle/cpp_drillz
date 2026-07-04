@@ -13,8 +13,6 @@ public:
 	void read_ages();
 	void print();
 	void sort();
-
-private:
 	std::vector<std::string> name;
 	std::vector<double> age;
 	std::map<std::string, int> data;
@@ -88,6 +86,18 @@ void Name_pairs::sort()
 	}
 }
 
+std::ostream &operator<<(std::ostream &os, const Name_pairs p)
+{
+	for (int i = 0; i < p.name.size(); i++)
+	{
+		// for (int j = 0; j < age.size(); j++)
+		// {
+		std::cout << "name: " << p.name[i] << ":" << "age: " << p.age[i] << "\n";
+		// }
+	}
+	return os;
+}
+
 void Name_pairs::print()
 {
 	// std::numeric_limits(n);
@@ -114,4 +124,5 @@ int main()
 	namey.read_ages();
 	namey.sort();
 	namey.print();
+	std::cout << "after creating << overload: " << namey << "\n";
 }
