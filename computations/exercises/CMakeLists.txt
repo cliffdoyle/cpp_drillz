@@ -27,3 +27,5 @@ add_executable(exo8 ex08.cpp)
 add_executable(enums enums.cpp)
 
 add_executable(enum enums_drill.cpp)
+
+add_executable(books book.cpp)
