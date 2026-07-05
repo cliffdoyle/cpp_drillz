@@ -16,21 +16,16 @@ enum class Genre
 class Book
 {
 public:
-    Book(std::string i, std::string t, std::string a, std::string c, bool b,Genre g)
+    Book(std::string i, std::string t, std::string a, std::string c, bool b, Genre g)
+
+        : isbn{i},
+          title{t},
+          author{a},
+          copywright_date{c},
+          is_checkedout{b},
+          gen{g}
     {
-        isbn = i;
-        title = t;
-        author = a;
-        copywright_date = c;
-        is_checkedout = b;
-        gen=g;
     }
-    std::string isbn;
-    std::string title;
-    std::string author;
-    std::string copywright_date;
-    Genre gen;
-    bool is_checkedout;
 
     std::string get_isbn();
     std::string get_title();
@@ -38,6 +33,14 @@ public:
     std::string get_copywright_date();
     void checkin_book();
     void checkout_book();
+
+private:
+    std::string isbn;
+    std::string title;
+    std::string author;
+    std::string copywright_date;
+    Genre gen;
+    bool is_checkedout;
 };
 
 void Book::checkin_book()
@@ -135,33 +138,34 @@ std::string Book::get_copywright_date()
 // Operators for the book
 bool operator==(Book &a, Book &b)
 {
-    return a.isbn == b.isbn;
+    return a.get_isbn() == b.get_isbn();
 }
 
 bool operator!=(Book &a, Book &b)
 {
-    return a.isbn != b.isbn;
+    return a.get_isbn() != b.get_isbn();
 }
 
 std::ostream &operator<<(std::ostream &os, Book &b)
 {
-    os << "Book title is: " << b.title << "\n";
-    os << "Book author is: " << b.author << "\n";
-    os << "Book ISBN number is: " << b.isbn << "\n";
+    os << "Book title is: " << b.get_title() << "\n";
+    os << "Book author is: " << b.get_author() << "\n";
+    os << "Book ISBN number is: " << b.get_isbn() << "\n";
     return os;
 }
 
 int main()
 {
-    std::string isbn="1-2-3-4";
-    std::string title="larevencha";
-    std::string author="cliff";
-    std::string copywright_date="1122025";
-    Genre gen=Genre::children;
-    bool is_checkedout=false;
-    Book b(isbn,title,author,copywright_date,is_checkedout,gen);
+    std::string isbn = "1-2-3-4";
+    std::string title = "larevencha";
+    std::string author = "cliff";
+    std::string copywright_date = "1122025";
+    Genre gen = Genre::children;
+    bool is_checkedout = false;
+    Book b(isbn, title, author, copywright_date, is_checkedout, gen);
     b.checkin_book();
-    std::cout << b.get_author() << "\n";
-    std::cout << b.get_isbn() << "\n";
-    std::cout << b.get_title() << "\n";
+    // std::cout << b.get_author() << "\n";
+    // std::cout << b.get_isbn() << "\n";
+    // std::cout << b.get_title() << "\n";
+    std::cout << b << "\n";
 }
