@@ -29,3 +29,7 @@ add_executable(enums enums.cpp)
 add_executable(enum enums_drill.cpp)
 
 add_executable(books book.cpp)
+
+add_executable(patron patron.cpp)
+
+add_executable(library library.cpp)
