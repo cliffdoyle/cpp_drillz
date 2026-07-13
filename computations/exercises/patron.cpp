@@ -26,25 +26,25 @@ void Patron::set_fee(int f)
     // return;
 }
 
-bool is_indebt(const Patron &p)
+bool Patron::is_indebt()
 {
     // if (p.get_libraryfee() > 0)
     //     return true;
-    return p.get_libraryfee() > 0;
+    return get_libraryfee() > 0;
 }
-std::ostream &operator<<(std::ostream &os, const Patron &p)
-{
-    os << p.get_username() << "\n";
-    os << p.get_cardnumber() << "\n";
-    os << p.get_libraryfee() << "\n";
-    return os;
-}
+// std::ostream &operator<<(std::ostream &os, const Patron &p)
+// {
+//     os << p.get_username() << "\n";
+//     os << p.get_cardnumber() << "\n";
+//     os << p.get_libraryfee() << "\n";
+//     return os;
+// }
 
-int main()
+// int main()
 
-{
-    Patron p("clifford", 1, 0);
-    p.set_fee(30);
-    std::cout << is_indebt(p) << "\n";
-    std::cout << p;
-}
+// {
+//     Patron p("clifford", 1, 0);
+//     p.set_fee(30);
+//     std::cout << is_indebt(p) << "\n";
+//     std::cout << p;
+// }

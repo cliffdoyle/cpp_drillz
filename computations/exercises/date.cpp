@@ -1,24 +1,25 @@
-# include "date.h"
+#include "date.h"
 
-Date::Date(int year,int month, int day) :y{year},m{month},d{day}
-{}
-
-Date::add_day(int n)
+Date::Date(int year, int month, int day) : year{year}, month{month}, day{day}
 {
-	return d + n;
 }
 
-Date::month()
+void Date::add_day(int n)
 {
-	return m;
+	day + n;
 }
 
-Date::day()
+int Date::get_month()
 {
-	return d;
+	return month;
 }
 
-Date::year()
+int Date::get_day()
 {
-	return y;
+	return day;
+}
+
+int Date::get_year()
+{
+	return year;
 }

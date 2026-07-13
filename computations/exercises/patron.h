@@ -14,5 +14,6 @@ public:
     std::string get_username() const;
     int get_cardnumber() const;
     int get_libraryfee() const;
+    bool is_indebt();
     void set_fee(int);
 };
