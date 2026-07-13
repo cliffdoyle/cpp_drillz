@@ -5,3 +5,61 @@ build/
 *.pdb
 *.obj
 *.o
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+
+# CMake build output
+out/
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.cmake
+!CMakeLists.txt
+
+# CMake presets (keep this if you intentionally share presets, otherwise ignore)
+CMakeUserPresets.json
+
+# CMake/VS workspace state (the stuff cluttering your Changes list)
+cmake.db
+slnx.sqlite
+ProjectSettings.json
+VSWorkspaceState.json
+DocumentLayout.json
+
+# Build artifacts
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
+Debug/
+Release/
+x64/
+x86/
+
+# IDE misc
+*.log
+*.tlog
+*.idb
+
+# OS files
+Thumbs.db
+.DS_Store
+
+.vs/
+out/
+build/
+cmake.db
+slnx.sqlite
+CMakeWorkspaceSettings.json
+ProjectSettings.json
+VSWorkspaceState.json
+DocumentLayout.json
