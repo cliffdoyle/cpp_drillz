@@ -148,11 +148,25 @@ Link *insert(Link *p, Link *n)
     return n;
 }
 
+void print_all(Link *p)
+{
+    cout << "{ ";
+    while (p)
+    {
+        cout << p->value;
+        if (p = p->succ)
+            cout << ", ";
+    }
+    cout << " }";
+}
+
 int main()
 {
     Link *norse_gods = new Link{"Thor"};
     norse_gods = insert(norse_gods, new Link{"Odin"});
     norse_gods = insert(norse_gods, new Link{"Freja"});
 
-    cout << "Linked list: " << norse_gods << "\n";
+    // cout << "Linked list: " << norse_gods << "\n";
+    print_all(norse_gods);
+    cout << '\n';
 }
