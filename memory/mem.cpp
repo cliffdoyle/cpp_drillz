@@ -70,13 +70,23 @@ using namespace std;
 //     Link *succ;
 // };
 
-// ostream &operator<<(ostream &os, Link *l)
-// {
-//     os << "name of node: " << l->value << '\n';
-//     os << "name of the successor node: " << l->succ->value << '\n';
-//     os << "name of the previous node: " << l->prev->value << '\n';
-//     return os;
-// }
+struct Link
+{
+    Link(const string &v, Link *p = nullptr, Link *s = nullptr)
+        : value{v}, prev{p}, succ{s} {}
+
+    string value;
+    Link *prev;
+    Link *succ;
+};
+
+ostream &operator<<(ostream &os, Link *l)
+{
+    os << "name of node: " << l->value << '\n';
+    os << "name of the successor node: " << l->succ->value << '\n';
+    os << "name of the previous node: " << l->prev->value << '\n';
+    return os;
+}
 
 // int main()
 // {
@@ -116,16 +126,6 @@ using namespace std;
 //     d->eat();
 // }
 
-struct Link
-{
-    Link(const string &v, Link *p = nullptr, Link *s = nullptr)
-        : value{v}, prev{p}, succ{s} {}
-
-    string value;
-    Link *prev;
-    Link *succ;
-};
-
 Link *insert(Link *p, Link *n)
 {
     if (n == nullptr)
@@ -146,4 +146,13 @@ Link *insert(Link *p, Link *n)
     n->prev = p->prev;
     p->prev = n;
     return n;
+}
+
+int main()
+{
+    Link *norse_gods = new Link{"Thor"};
+    norse_gods = insert(norse_gods, new Link{"Odin"});
+    norse_gods = insert(norse_gods, new Link{"Freja"});
+
+    cout << "Linked list: " << norse_gods << "\n";
 }
