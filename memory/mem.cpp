@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <span>
 using namespace std;
 
 // void sizes(char ch, int i, double *p)
@@ -160,6 +161,33 @@ void print_all(Link *p)
     cout << " }";
 }
 
+void print_ns(int *p, int n)
+{
+    if (p == nullptr)
+    {
+        return;
+    }
+    for (int i = 0; i < n; ++i)
+    {
+        cout << p[i] << '\n';
+    }
+}
+
+// void prin (span<int> s)
+// {
+//     for (int x : s)
+//         cout << x << ' ';
+// }
+
+void user()
+{
+    int a[7] = {1, 2, 33, 67, 89, 90, 87};
+    int *p = new int[8]{12, 123, 89, 90, 78, 32, 67, 28};
+    // ... fill a and *p ...
+    print_ns(a, 7);
+    print_ns(p, 8);
+}
+
 int main()
 {
     Link *norse_gods = new Link{"Thor"};
@@ -183,4 +211,6 @@ int main()
     {
         cout << "current array: " << i << "\n";
     }
+
+    user();
 }
