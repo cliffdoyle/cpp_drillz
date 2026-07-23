@@ -169,4 +169,18 @@ int main()
     // cout << "Linked list: " << norse_gods << "\n";
     print_all(norse_gods);
     cout << '\n';
+
+    // Pointer arithmetic
+    double a[8];
+    double *p = &a[4];
+
+    *p = 7;
+    // step the pointer by n then dereference p[n]= *(p+n)
+    p[3] = 98;
+    p[-3] = 109.5;
+
+    for (double i : a)
+    {
+        cout << "current array: " << i << "\n";
+    }
 }
