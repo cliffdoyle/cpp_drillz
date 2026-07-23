@@ -218,8 +218,8 @@ int main()
 
     testq(nums);
 
-    char s[] = "abb0y";
-    s[1]='p';
+    char* s = nullptr;
+    // s[1]='p';
     int res = strlen(s);
     cout << "strng len of p: " << res << "actual string: "<<s<<'\n';
 }

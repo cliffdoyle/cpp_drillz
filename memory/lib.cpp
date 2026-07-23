@@ -8,11 +8,11 @@ using namespace std;
 // not_null concept
 // to demonstrate we use strlen() function
 
-int strlen(const char *p)
+int strlen(const char*p)
 {
     if (p == nullptr)
     {
-        return 0;
+        return 908;
     }
     int n = 0;
     while (*p++)
